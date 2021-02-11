@@ -20,6 +20,7 @@ if args.type == 'manual':
     newImage = cv2.warpAffine(img,M,(600,600))
     ##### Displaying image
     cv2.imshow("Original Image - Manual",newImage)
+    print("Press any key to continue")
     cv2.waitKey(0) 
     cv2.destroyAllWindows()
     ##### Saving Image
@@ -35,6 +36,7 @@ elif args.type == 'api':
     newImage = cv2.warpAffine(img,M,(600,600))
     ##### Displaying image
     cv2.imshow("Original Image - API",newImage)
+    print("Press any key to continue")
     cv2.waitKey(0) 
     cv2.destroyAllWindows()
     cv2.imwrite("../convincingDirectory/original-api.jpg",newImage)

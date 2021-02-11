@@ -15,13 +15,6 @@ width , height ,channels = img.shape
 # plt.imshow(rgb)
 # plt.show()
 
-upperLeft = [220,241] 
-lowerLeft = [704,1028]
-lowerRight = [992,826]
-upperRight = [481,186]
-middle = [453,625]
-originalC = np.array([upperLeft,lowerLeft,lowerRight,upperRight],dtype='uint8')
-
 
 cv2.imshow("Progression",img)
 cv2.waitKey(1000)
@@ -45,10 +38,11 @@ newUpperRight = [0,0]
 newLowerLeft =  [511,384]
 newLowerRight = [511,0]
 newC = np.array([newUpperLeft,newLowerLeft,newLowerRight,newUpperRight],dtype='float32')
-updateArray = (newC-originalC)/8
-count = 8
+updateArray = (newC-originalC)/9
+count = 9
 oldC = originalC
 
+print("Press Q key to exit the animation")
 while count > 0:
     newIntermediateC = oldC + updateArray
     matrix = cv2.getPerspectiveTransform(oldC,newIntermediateC)
@@ -56,6 +50,7 @@ while count > 0:
     maxHeight = np.max(newIntermediateC,axis=0)[1]
     if count == 1:
         result = cv2.warpPerspective(img,matrix,(512,385))
+        cv2.imwrite("../convincingDirectory/obelisk-output.png",result)
     else:
         result = cv2.warpPerspective(img,matrix,(maxWidth,maxHeight))
     cv2.imshow("Progression",result)
@@ -65,13 +60,7 @@ while count > 0:
     if cv2.waitKey(1000) & 0xFF == ord('q'):
         break
 
+print("Animation Ended. Press any key to close the window. ")
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# #### Transformation Matrix for shear transformation
-# M = np.array([[1,-0.1,0],[-0.1,1,0]],dtype='float32')
-# #### New Image after affine transformation
-# newImage = cv2.warpAffine(img,M,(600,600))
-# ##### Displaying image
-# cv2.imshow("Original Image - Manual",newImage)
-# cv2.waitKey(0) 
-# cv2.destroyAllWindows()
+
