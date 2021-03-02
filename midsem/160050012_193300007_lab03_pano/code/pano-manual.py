@@ -86,4 +86,5 @@ cv2.imshow("Panaromic Image - Image 1 as reference ",result)
 print("Press any key to exit")
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-cv2.imwrite("../results/pano-manual-results/panaromaSample-I1reference.jpg",result)
+file = path.split("/")[-2]
+cv2.imwrite("../results/pano-manual-results/"+file+'.jpg',result)

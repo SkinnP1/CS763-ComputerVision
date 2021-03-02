@@ -53,6 +53,7 @@ if len(good) > 10:
     cv2.imshow("Panaromic Image",result)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    cv2.imwrite("../results/pano-auto-results/panaromaSample.jpg",result)
+    file = path.split("/")[-2]
+    cv2.imwrite("../results/pano-auto-results/"+file+'.jpg',result)
 
     
