@@ -1,0 +1,2 @@
+vanilla GAN: https://drive.google.com/file/d/1-U0bqdQhgLs9egytZTASbiTjNpvYnrtV/view?usp=sharing
+cwGAN: https://drive.google.com/file/d/1-SLBRHGxgJK7WctqzNLu088j987MtieE/view?usp=sharing
