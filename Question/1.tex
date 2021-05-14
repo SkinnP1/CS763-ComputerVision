@@ -1,0 +1,77 @@
+\documentclass{exam}[14pt]
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{6in}{\centering
+CS 763 - Computer Vision}}}
+\end{center}
+\vspace{5mm}
+\textbf{Question:}\newline\newline
+\question Given a pair of images, transform both images so that epipolar lines are scan lines.
+\newline \newline
+\textbf{Answer:}\newline\newline
+Consider a point in  world coordinate system $[X,Y,Z]$. This point is mapped to point $[x_l,y_l,w_l]$ in \newline image  taken from camera 1. 
+\newline\newline
+Consider a point in  world coordinate system $[X,Y,Z]$. This point is mapped to point $[x_r,y_r,w_r]$ in \newline image  taken from camera 2.
+\newline 
+\[
+\begin{bmatrix}
+    x_l\\
+    y_l\\ 
+    w_l\\
+\end{bmatrix}
+=  P 
+\begin{bmatrix}
+    X\\
+    Y\\ 
+    Z\\
+    1\\
+\end{bmatrix} 
+\]
+\newline 
+\[
+\begin{bmatrix}
+    x_r\\
+    y_r\\ 
+    w_r\\
+\end{bmatrix}
+=  P'
+\begin{bmatrix}
+    X\\
+    Y\\ 
+    Z\\
+    1\\
+\end{bmatrix} 
+\]
+We need to simply stereo matching by warping the images. \newline\newline
+We need to apply projective transformation so that epipolar lines correspond to horizontal scanlines.
+\newline \newline 
+We should transform the images such that epipoles of images are mapped to $[1,0,0]$. 
+\newline \newline
+Let the epipole of image 1 be $e^l$ and epipole of image 2 be $e^r$.
+\newline\newline
+Therefore,
+\[
+\begin{bmatrix}
+    1\\
+    0\\ 
+    0\\
+\end{bmatrix}
+=  H^l e^l
+\]
+\[
+\begin{bmatrix}
+    1\\
+    0\\ 
+    0\\
+\end{bmatrix}
+=  H^r e^r
+\].
+\newline\newline
+Find $H^l$ and $H^r$ and then apply transformation to image 1 and image 2 respectively. 
+\newline
+After this, we would get epipolar lines as scan lines for both images. 
+
+\end{document}
