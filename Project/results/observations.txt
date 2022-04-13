@@ -1,0 +1,57 @@
+
+Resnet18 + Bi-LSTM
+train_loss =  2.1972313218000457
+test_loss =  2.9128499627113342
+train accuracy_score =  0.21949404761904762
+test accuracy_score =  0.10625
+
+
+Resnet50 + Bi-LSTM
+train_loss =  2.0705529335068493
+test_loss =  2.8944883346557617
+train accuracy_score =  0.25669642857142855
+test accuracy_score =  0.14375
+
+
+Resnet152 + Bi-LSTM
+train_loss =  2.0911687438080953
+test_loss =  3.129854202270508
+train accuracy_score =  0.25595238095238093
+test accuracy_score =  0.10625
+
+
+Resnet18 + Bi-GRU
+train_loss =  2.2187551434447124
+test_loss =  2.8566996455192566
+train accuracy_score =  0.20907738095238096
+test accuracy_score =  0.13125
+
+
+Resnet50 + Bi-GRU
+train_loss =  2.2018436949427533
+test_loss =  2.9182910323143005
+train accuracy_score =  0.20461309523809523
+test accuracy_score =  0.10625
+
+Resnet152 + Bi-GRU
+train_loss =  2.3037547919808365
+test_loss =  3.050051510334015
+train accuracy_score =  0.13541666666666666
+test accuracy_score =  0.075
+
+
+Pre Trained VGG16 + Bi-LSTM
+train_loss =  2.05468565080224
+test_loss =  3.2093803882598877
+train accuracy_score =  0.27529761904761907
+test accuracy_score =  0.0875
+
+
+Pre Trained VGG16 + Bi-GRU
+train_loss =  2.1955138328598767
+test_loss =  2.997414231300354
+train accuracy_score =  0.21875
+test accuracy_score =  0.1
+
+
+
